@@ -6,17 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title></title>
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link id="theme-link" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <script>
         const theme = window.theme || 'red';
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = '/themes/' + theme + '.css';
-        if (document.querySelector('head')) {
-            document.querySelector('head').insertBefore(link, document.querySelector('head').children[0]);
-        }
+        document.querySelector('#theme-link').setAttribute('href', '/themes/' + theme + '.css');
     </script>
     <div id="root"></div>
 </body>
