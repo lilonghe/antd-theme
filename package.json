@@ -4,9 +4,8 @@
     "build": "webpack --config=build/webpack.pro.js",
     "lint": "lint-staged",
     "eslint": "eslint --fix --ext .jsx,.js src/",
-    "theme:default": "lessc --clean-css='--s1 --advanced' --js src/themes/default.less public/themes/default.css",
-    "theme:red": "lessc --clean-css='--s1 --advanced' --js src/themes/red.less public/themes/red.css",
-    "theme": "webpack --config=build/webpack.theme.js"
+    "theme": "webpack --config=build/webpack.theme.js",
+    "prebuild": "npm run theme"
   },
   "husky": {
     "hooks": {

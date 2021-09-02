@@ -30,6 +30,7 @@ const libCSSSRC = {
     loader: "css-loader",
     options: {
         esModule: false,
+        modules: false,
     },
 }
 
@@ -117,9 +118,19 @@ module.exports = {
             {
                 test: /\.less$/,
                 include: /src/,
+                exclude: /src\/themes/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     cssSRC,
+                    lessSRC,
+                ]
+            },
+            {
+                test: /\.less$/,
+                include: /src\/themes/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    libCSSSRC,
                     lessSRC,
                 ]
             },
