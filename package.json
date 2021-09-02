@@ -6,7 +6,7 @@
     "eslint": "eslint --fix --ext .jsx,.js src/",
     "theme:default": "lessc --clean-css='--s1 --advanced' --js src/themes/default.less public/themes/default.css",
     "theme:red": "lessc --clean-css='--s1 --advanced' --js src/themes/red.less public/themes/red.css",
-    "theme": "npm run theme:default && npm run theme:red"
+    "theme": "webpack --config=build/webpack.theme.js"
   },
   "husky": {
     "hooks": {
